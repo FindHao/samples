@@ -15,6 +15,12 @@ output_prefix= ''
 def get_execute_name(reports_path):
     global reports_with_path, execute_name, execute_times, prefix_path, output_prefix
     reg = re.compile(r"report(\d+)")
+    # reports_path always end with /reports/
+    tmp_report_path = reports_path
+    if reports_path.endswith('/'):
+        tmp_report_path=tmp_report_path[:-1]
+    output_prefix = os.path.basename(tmp_report_path[:-8])
+
     for parent, dirnames, filenames in os.walk(reports_path,  followlinks=True):
         for filename in filenames:
             file_path = os.path.join(parent, filename)
@@ -22,10 +28,8 @@ def get_execute_name(reports_path):
             # print('file name：%s' % filename)
             # print('full path of this file：%s\n' % file_path)
             if not execute_name and filename.endswith(".qdrep"):
-                
                 execute_name = filename[:-6].split("_")[1]
                 prefix_path = parent
-                output_prefix = execute_name
             result = reg.findall(filename)
             execute_times = max(int(result[0]), execute_times)
     print(execute_name, execute_times, prefix_path, output_prefix)
