@@ -32,6 +32,7 @@ def get_execute_name(reports_path):
                 prefix_path = parent
             result = reg.findall(filename)
             execute_times = max(int(result[0]), execute_times)
+    print("execute_name, execute_times, prefix_path, output_prefix")
     print(execute_name, execute_times, prefix_path, output_prefix)
 
 def gpu_kernel_time():

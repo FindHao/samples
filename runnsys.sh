@@ -1,5 +1,4 @@
 #!/bin/bash
-# ./runnsys.sh  > hist.nvprof.time 2>&1
 
 
 if [ $# -eq 0 ]; then
