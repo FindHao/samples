@@ -11,6 +11,11 @@ srad_v1/image_out.pgm
 srad_v2/srad
 srad_v1_opt/srad
 backprop/backprop
+backprop-opt1/backprop
+backprop-opt2/backprop
+backprop-opt3/backprop
+backprop-opt4/backprop
+backprop-opt12/backprop
 cfd/euler3d
 cfd/euler3d_double
 cfd/pre_euler3d
@@ -78,3 +83,7 @@ data/
 */gvprof-measurements/
 */gvprof-database*/
 */gvprof*/
+
+report*.qdrep
+report*.sqlite
+*csv
