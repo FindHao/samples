@@ -33,6 +33,8 @@ reduction/reduction
 dxtc/dxtc
 matrixMulCUBLAS/matrixMulCUBLAS
 b+tree/b+tree.out
+b+tree-opt/b+tree.out
+b+tree-opt2/b+tree.out
 heartwall/heartwall
 hotspot3D/3D
 hotspot3D/output.out
