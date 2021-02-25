@@ -36,6 +36,9 @@ b+tree/b+tree.out
 b+tree-opt/b+tree.out
 b+tree-opt2/b+tree.out
 heartwall/heartwall
+hotspot/hotspot
+hotspot-opt/hotspot
+hotspot-opt3/hotspot
 hotspot3D/3D
 hotspot3D/output.out
 huffman/pavle
