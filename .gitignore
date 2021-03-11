@@ -55,6 +55,7 @@ hotspot-opt*/output.out
 hotspot3D/3D
 hotspot3D/output.out
 huffman/pavle
+huffman-opt*/pavle
 lavaMD/lavaMD
 lavaMD-opt/lavaMD
 lavaMD-opt3/lavaMD
