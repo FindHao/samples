@@ -76,6 +76,7 @@ myocyte-opt*/myocyte.out
 myocyte-opt*/output.txt
 nn/nn
 nw/needle
+nw-opt*/needle
 particlefilter/particlefilter_float
 particlefilter/particlefilter_naive
 streamcluster/sc_gpu
