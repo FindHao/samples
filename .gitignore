@@ -48,7 +48,10 @@ heartwall-opt23/heartwall
 heartwall-opt3/heartwall
 hotspot/hotspot
 hotspot-opt/hotspot
+hotspot-opt2/hotspot
 hotspot-opt3/hotspot
+hotspot/output.out
+hotspot-opt*/output.out
 hotspot3D/3D
 hotspot3D/output.out
 huffman/pavle
