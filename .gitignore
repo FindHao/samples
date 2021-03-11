@@ -25,6 +25,7 @@ hotspot/hotspot
 pathfinder/pathfinder
 pathfinder/result.txt
 gaussian/gaussian
+gaussian-opt/gaussian
 vectorAdd*/vectorAdd
 kmeans/kmeans
 bfs/bfs
