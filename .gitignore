@@ -59,7 +59,7 @@ huffman/pavle
 huffman-opt*/pavle
 lavaMD/lavaMD
 lavaMD-opt/lavaMD
-lavaMD-opt3/lavaMD
+lavaMD-opt*/lavaMD
 lud/cuda/lud_cuda
 lud/cuda/*log
 lud/cuda/*csv
