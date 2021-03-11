@@ -16,6 +16,7 @@ backprop-opt2/backprop
 backprop-opt3/backprop
 backprop-opt4/backprop
 backprop-opt12/backprop
+backprop-opt5/backprop
 cfd/euler3d
 cfd/euler3d_double
 cfd/pre_euler3d
