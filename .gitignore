@@ -63,6 +63,13 @@ lavaMD-opt*/lavaMD
 lud/cuda/lud_cuda
 lud/cuda/*log
 lud/cuda/*csv
+lud/cuda/reports/
+lud/reports
+lud-opt*/cuda/lud_cuda
+lud-opt*/cuda/*log
+lud-opt*/cuda/*csv
+lud-opt*/cuda/reports
+lud-opt*/reports
 myocyte/myocyte.out
 myocyte/output.txt
 nn/nn
@@ -105,7 +112,6 @@ data/
 */gvprof-measurements/
 */gvprof-database*/
 */gvprof*/
-
 report*.qdrep
 report*.sqlite
 *csv
