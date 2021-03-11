@@ -82,6 +82,7 @@ nw-opt*/needle
 particlefilter/particlefilter_float
 particlefilter/particlefilter_naive
 streamcluster/sc_gpu
+streamcluster-opt*/sc_gpu
 cfd/density
 cfd/density_energy
 cfd/momentum
