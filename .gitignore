@@ -35,6 +35,9 @@ matrixMulCUBLAS/matrixMulCUBLAS
 b+tree/b+tree.out
 b+tree-opt/b+tree.out
 b+tree-opt2/b+tree.out
+b+tree/penmp
+b+tree-opt/penmp
+b+tree-opt2/penmp
 heartwall/heartwall
 hotspot/hotspot
 hotspot-opt/hotspot
