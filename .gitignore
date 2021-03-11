@@ -26,6 +26,8 @@ cfd/pre_euler3d_double
 hotspot/hotspot
 pathfinder/pathfinder
 pathfinder/result.txt
+pathfinder-opt*/pathfinder
+pathfinder-opt*/result.txt
 gaussian/gaussian
 gaussian-opt/gaussian
 vectorAdd*/vectorAdd
