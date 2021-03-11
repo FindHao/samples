@@ -28,8 +28,9 @@ gaussian/gaussian
 gaussian-opt/gaussian
 vectorAdd*/vectorAdd
 kmeans/kmeans
+kmeans-opt*/kmeans
 bfs/bfs
-bfs-opt/bfs
+bfs-opt*/bfs
 dwt2d/dwt2d
 dwt2d/*.bmp.dwt.*
 reduction/reduction
