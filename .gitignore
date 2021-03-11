@@ -28,6 +28,7 @@ gaussian/gaussian
 vectorAdd*/vectorAdd
 kmeans/kmeans
 bfs/bfs
+bfs-opt/bfs
 dwt2d/dwt2d
 dwt2d/*.bmp.dwt.*
 reduction/reduction
@@ -40,6 +41,9 @@ b+tree/penmp
 b+tree-opt/penmp
 b+tree-opt2/penmp
 heartwall/heartwall
+heartwall-opt/heartwall
+heartwall-opt2/heartwall
+heartwall-opt3/heartwall
 hotspot/hotspot
 hotspot-opt/hotspot
 hotspot-opt3/hotspot
@@ -47,6 +51,8 @@ hotspot3D/3D
 hotspot3D/output.out
 huffman/pavle
 lavaMD/lavaMD
+lavaMD-opt/lavaMD
+lavaMD-opt3/lavaMD
 lud/cuda/lud_cuda
 lud/cuda/*log
 lud/cuda/*csv
