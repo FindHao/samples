@@ -8,6 +8,8 @@ MonteCarloMultiGPU/MonteCarloMultiGPU
 recursiveGaussian/recursiveGaussian
 srad_v1/srad
 srad_v1/image_out.pgm
+srad_v1-opt*/srad
+srad_v1-opt*/image_out.pgm
 srad_v2/srad
 srad_v1_opt/srad
 backprop/backprop
