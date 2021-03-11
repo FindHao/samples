@@ -11,7 +11,7 @@ TARGET_G = sc_gpu
 ifeq ($(dbg),1)
 	NVCC_FLAGS += -g -O0
 else
-	NVCC_FLAGS += -O3 -g -lineinfo -arch sm_70
+	NVCC_FLAGS += -O3 -g -lineinfo -arch sm_75
 endif
 
 # make emu=1 compiles the CUDA kernels for emulation
@@ -21,7 +21,7 @@ endif
 
 # make dp=1 compiles the CUDA kernels with double-precision support
 ifeq ($(dp),1)
-	NVCC_FLAGS += --gpu-name sm_70
+	NVCC_FLAGS += --gpu-name sm_75
 endif
 
 

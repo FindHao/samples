@@ -1,2 +1,2 @@
 ./gaussian -f ../data/matrix1024.txt -q
-./gaussian -s 16
+./gaussian -s 16 -q

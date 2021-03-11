@@ -3,6 +3,7 @@ from sys import argv
 import pandas as pd
 import os
 import re
+import argparse
 
 
 reports_with_path = {}
@@ -12,7 +13,7 @@ prefix_path = ''
 output_prefix= ''
 
 
-def get_execute_name(reports_path):
+def get_execute_name(reports_path, a_execute_name=''):
     global reports_with_path, execute_name, execute_times, prefix_path, output_prefix
     reg = re.compile(r"report(\d+)")
     # reports_path always end with /reports/
@@ -20,6 +21,8 @@ def get_execute_name(reports_path):
     if reports_path.endswith('/'):
         tmp_report_path=tmp_report_path[:-1]
     output_prefix = os.path.basename(tmp_report_path[:-8])
+    if a_execute_name:
+        execute_name = a_execute_name
 
     for parent, dirnames, filenames in os.walk(reports_path,  followlinks=True):
         for filename in filenames:
@@ -29,6 +32,7 @@ def get_execute_name(reports_path):
             # print('full path of this file：%s\n' % file_path)
             if not execute_name and filename.endswith(".qdrep"):
                 execute_name = filename[:-6].split("_")[1]
+            if not prefix_path:
                 prefix_path = parent
             result = reg.findall(filename)
             execute_times = max(int(result[0]), execute_times)
@@ -104,11 +108,15 @@ def gpu_mem_size():
 
 
 if __name__ == "__main__":
-    if len(argv) != 2:
-        print("usage:\nselectnsys.py reports_path")
-        exit(-1)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-i', '--report-path', metavar='The path of nsys reports.',
+                        required=True, dest='report_path', action='store')
+    parser.add_argument('-e', '--execute_name',
+                        metavar='report1_XXX_gpukernsum.csv, the middle XXX',
+                        required=False, dest='execute_name', action='store')
 
-    get_execute_name(argv[1])
+    args = parser.parse_args()
+    get_execute_name(args.report_path, args.execute_name)
     
     gpu_kernel_time()
     cuda_api()

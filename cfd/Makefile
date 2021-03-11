@@ -12,7 +12,7 @@ NVCC_FLAG := -g -lineinfo
 
 COMMON_INC=../common/inc
 COMMON_LIB=../common/lib
-architecture=sm_70
+architecture=sm_75
 
 
 
