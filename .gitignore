@@ -72,6 +72,8 @@ lud-opt*/cuda/reports
 lud-opt*/reports
 myocyte/myocyte.out
 myocyte/output.txt
+myocyte-opt*/myocyte.out
+myocyte-opt*/output.txt
 nn/nn
 nw/needle
 particlefilter/particlefilter_float
