@@ -23,7 +23,7 @@
 #include "define.c"
 
 params_common_change common_change;
-__constant__ params_common_change d_common_change;
+__device__ params_common_change d_common_change;
 
 params_common common;
 __constant__ params_common d_common;

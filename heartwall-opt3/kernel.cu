@@ -269,7 +269,7 @@ __global__ void kernel(){
 			}
 
 			s = 0;
-
+ #pragma unroll 8
 			for(ja=ja1; ja<=ja2; ja++){
 				jb = jp1 - ja;
 				for(ia=ia1; ia<=ia2; ia++){
