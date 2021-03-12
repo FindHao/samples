@@ -9,7 +9,7 @@ ifeq ($(shell uname -m), x86_64)
 endif
 
 CUDA_LIB =	-lcuda -lcudart
-CUDA_FLAG = -arch sm_75 -g -lineinfo 
+CUDA_FLAG = -arch sm_70 -g -lineinfo 
 
 # ====================================================================================================100
 #	END

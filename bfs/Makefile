@@ -1,6 +1,6 @@
 CC := nvcc
 
-ARCH ?= sm_75
+ARCH ?= sm_70
 NVCCFlag=-g -O3 -arch $(ARCH) -lineinfo
 SRC = bfs.cu
 

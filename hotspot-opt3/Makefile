@@ -15,7 +15,7 @@ CC := $(CUDA_DIR)/bin/nvcc
 
 INCLUDE := $(CUDA_DIR)/include
 
-NVCC_FLAG := -lineinfo -O3 -g  --use_fast_math
+NVCC_FLAG := -lineinfo -O3 -g  --use_fast_math -arch sm_70
 
 SRC = hotspot.cu
 

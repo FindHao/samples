@@ -19,7 +19,7 @@ OMP_FLAG = -fopenmp
 
 CUD_C = $(CUDA_DIR)/bin/nvcc
 # OMP_FLAG = 	-Xcompiler paste_one_here
-CUDA_FLAG = -arch sm_75  -g -O3 -lineinfo
+CUDA_FLAG = -arch sm_70  -g -O3 -lineinfo
 C_FLAG = -g -O3
 # link objects (binaries) together
 a.out:		main.o \

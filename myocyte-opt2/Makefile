@@ -13,7 +13,7 @@ myocyte.out:		main.o
 				-I/usr/local/cuda/include \
 				-L/usr/local/cuda/lib \
 				-lm -lcuda -lcudart \
-                    -O3 -g -lineinfo    --use_fast_math        -o myocyte.out
+                    -O3 -g -lineinfo    --use_fast_math        -o myocyte.out -arch sm_70
 
 # compile main function file into object (binary)
 main.o:	define.c \
@@ -36,7 +36,7 @@ main.o:	define.c \
 				file.c \
 				timer.c
 	nvcc	main.cu \
-				-c -O3 -g -lineinfo --use_fast_math 
+				-c -O3 -g -lineinfo --use_fast_math -arch sm_70 
 
 # delete all object files
 clean:

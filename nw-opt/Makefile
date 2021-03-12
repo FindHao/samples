@@ -2,7 +2,7 @@ CUDA_DIR ?= /usr/local/cuda/
 CUDA_LIB_DIR := $(CUDA_DIR)/lib64
 
 CC := $(CUDA_DIR)/bin/nvcc
-CC_FLAG = -g -O3 -lineinfo
+CC_FLAG = -g -O3 -lineinfo -arch sm_70
 INCLUDE := $(CUDA_DIR)/include
 
 SRC = needle.cu

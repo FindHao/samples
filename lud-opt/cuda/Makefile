@@ -11,7 +11,7 @@ NVCCFLAGS += -I../common \
 			 -O3 \
 			 -use_fast_math \
 			 -lineinfo \
-			 -lm \
+			 -lm -arch sm_70\
 			 $(SPACE)
 
 CFLAGS += -I../common \

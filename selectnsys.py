@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 from sys import argv
 import pandas as pd
 import os
@@ -28,8 +28,6 @@ def get_execute_name(reports_path, a_execute_name=''):
         for filename in filenames:
             file_path = os.path.join(parent, filename)
             reports_with_path[filename] = file_path
-            # print('file name：%s' % filename)
-            # print('full path of this file：%s\n' % file_path)
             if not execute_name and filename.endswith(".qdrep"):
                 execute_name = filename[:-6].split("_")[1]
             if not prefix_path:

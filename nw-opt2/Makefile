@@ -1,7 +1,7 @@
 CUDA_DIR ?= /usr/local/cuda/
 CUDA_LIB_DIR := $(CUDA_DIR)/lib64
 
-HIGHEST_SM=75
+HIGHEST_SM=70
 CC := $(CUDA_DIR)/bin/nvcc
 CC_FLAG = -g -O3 -lineinfo -gencode arch=compute_$(HIGHEST_SM),code=compute_$(HIGHEST_SM)
 INCLUDE := $(CUDA_DIR)/include

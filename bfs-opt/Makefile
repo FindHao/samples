@@ -1,24 +1,22 @@
-include ../common/make.config
+CC := nvcc
 
-CC := $(CUDA_DIR)/bin/nvcc
-
-INCLUDE := $(CUDA_DIR)/include
-
+ARCH ?= sm_70
+NVCCFlag=-g -O3 -arch $(ARCH) -lineinfo
 SRC = bfs.cu
 
 EXE = bfs
 
 release: $(SRC)
-	$(CC) $(SRC) -O3 -lineinfo -o $(EXE) -I$(INCLUDE) -L$(CUDA_LIB_DIR) 
+	$(CC) $(SRC) -o $(EXE) ${NVCCFlag}
 
 enum: $(SRC)
-	$(CC) -deviceemu $(SRC) -o $(EXE) -I$(INCLUDE) -L$(CUDA_LIB_DIR) 
+	$(CC) -deviceemu $(SRC) -o $(EXE) ${NVCCFlag}
 
 debug: $(SRC)
-	$(CC) -g $(SRC) -o $(EXE) -I$(INCLUDE) -L$(CUDA_LIB_DIR) 
+	$(CC) -g $(SRC) -o $(EXE) ${NVCCFlag}
 
 debugenum: $(SRC)
-	$(CC) -g -deviceemu $(SRC) -o $(EXE) -I$(INCLUDE) -L$(CUDA_LIB_DIR) 
+	$(CC) -g -deviceemu $(SRC) -o $(EXE) ${NVCCFlag}
 
 clean: $(SRC)
-	rm -f $(EXE) $(EXE).linkinfo result.txt *.qdrep *.sqlite
+	rm -f $(EXE) $(EXE).linkinfo result.txt

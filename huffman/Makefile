@@ -4,7 +4,7 @@ CC = g++
 CUDA_DIR ?= /usr/local/cuda
 CUDA_LIB_DIR := $(CUDA_DIR)/lib64
 
-NVCC_OPTS=-O3 -arch=sm_75 -Xcompiler -m64 -g  -lineinfo
+NVCC_OPTS=-O3 -arch=sm_70 -Xcompiler -m64 -g  -lineinfo
 
 GCC_OPTS=-O3 -Wall -Wextra -m64 -g
 
