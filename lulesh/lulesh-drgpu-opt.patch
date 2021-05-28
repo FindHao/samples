@@ -1,0 +1,75 @@
+From b1a5540ca6a3f99c8a55fe8dbb573f76f7612476 Mon Sep 17 00:00:00 2001
+From: FindHao <find@findhao.net>
+Date: Thu, 27 May 2021 21:00:38 -0400
+Subject: [PATCH] drgpu-opt
+
+---
+ cuda/src/Makefile | 42 ++++++++++++++++++++++++++++++++++++++++++
+ cuda/src/lulesh.h |  2 +-
+ 2 files changed, 43 insertions(+), 1 deletion(-)
+ create mode 100755 cuda/src/Makefile
+
+diff --git a/cuda/src/Makefile b/cuda/src/Makefile
+new file mode 100755
+index 0000000..52af9f2
+--- /dev/null
++++ b/cuda/src/Makefile
+@@ -0,0 +1,42 @@
++# MPI_FLAGS = -DUSE_MPI -I$(MPICH_DIR)/include
++MPI_FLAGS = 
++NVCC		= nvcc
++FLAGS		=  -gencode arch=compute_70,code=sm_70 -g -lineinfo -O3 --use_fast_math
++DFLAGS	= $(MPI_FLAGS) -lineinfo -g
++RFLAGS 	= $(MPI_FLAGS) -O3 -DNDEBUG 
++
++#SILO_INCLUDES := /usr/local/silo-4.8/include
++#SILO_LIBS := /usr/local/silo-4.8/lib
++
++# LINKFLAGS = -lmpich -L$(MPICH_DIR)/lib 
++#LINKFLAGS += -L$(SILO_LIBS) -lsilo
++
++#INC_SILO:= -I$(SILO_INCLUDES)
++
++all: release 
++
++debug: LINKFLAGS += 
++
++release: 	FLAGS += $(RFLAGS)
++debug: 		FLAGS += $(DFLAGS)
++
++release: lulesh
++debug: lulesh
++
++lulesh: allocator.o lulesh.o lulesh-comms.o lulesh-comms-gpu.o
++	$(NVCC) $(LINKFLAGS) allocator.o lulesh.o lulesh-comms.o lulesh-comms-gpu.o -o lulesh
++
++allocator.o: allocator.cu vector.h
++	$(NVCC) $(FLAGS) allocator.cu -I ./ -c -o allocator.o
++
++lulesh.o: lulesh.cu util.h vector.h allocator.h
++	$(NVCC) $(FLAGS) lulesh.cu -I ./  $(INC_SILO) -c -o lulesh.o
++
++lulesh-comms.o: lulesh-comms.cu
++	$(NVCC) $(FLAGS) lulesh-comms.cu -I ./ -c -o lulesh-comms.o
++
++lulesh-comms-gpu.o: lulesh-comms-gpu.cu
++	$(NVCC) $(FLAGS) lulesh-comms-gpu.cu -I ./ -c -o lulesh-comms-gpu.o
++
++clean: 
++	rm -rf allocator.o lulesh-comms.o lulesh-comms-gpu.o lulesh.o lulesh xyz.asc regNumList.txt
+diff --git a/cuda/src/lulesh.h b/cuda/src/lulesh.h
+index e1c508d..df1919a 100755
+--- a/cuda/src/lulesh.h
++++ b/cuda/src/lulesh.h
+@@ -1,7 +1,7 @@
+ #include "vector.h"
+ 
+ #define LULESH_SHOW_PROGRESS 0
+-#define DOUBLE_PRECISION
++// #define DOUBLE_PRECISION
+ //#define SAMI 
+ 
+ #if USE_MPI
+-- 
+2.25.1
+
